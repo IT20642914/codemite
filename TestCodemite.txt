@@ -1,0 +1,43 @@
+// Problem: Unique Characters in a String
+
+let hasFound=[]
+
+const hasAllUniqueCharacters=(word)=>{
+const charArray=word.split('');
+
+charArray.map((char)=>{
+ischaraterAlredyFound=hasFound.fiter((item)=>item===char)
+if(!ischaraterAlredyFound){
+hasFound.push(char)
+}
+retrun  ischaraterAlredyFound
+})
+ 
+
+}
+
+
+Question 2
+
+select  s.CustomerName ,count(o.OrderAmount) as TotalSpent
+from Customers s
+left join  Orders o
+ON s.CustomerID=o.CustomerID
+group By s.CustomerName
+
+//task2
+let result=[]//assume this is result arry
+
+const getHighestToatalCustomer=(result)=>{
+
+let maxValue=0;
+result.map((item)=>{
+if(item.TotalSpent>maxValue){
+maxValue=item.TotalSpent
+}
+})
+
+ return result.filter((item)=>{ return item.TotalSpent===maxValue})
+
+}
+
